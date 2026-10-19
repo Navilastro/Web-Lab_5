@@ -1,17 +1,32 @@
-# React + Vite
+# React Product Dashboard - Web Programming Lab 5
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains my solution for the first React assignment in the Web Programming lab. The purpose of this project is to build a "Simple Product Dashboard" to practice core React concepts such as components, props, state management, and list rendering. 
 
-Currently, two official plugins are available:
+The project was created using Vite. As per the assignment rules, I used only functional components and `useState`. I did not use `useEffect`, API calls, Context, or any external component libraries.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## File Organization
 
-## React Compiler
+The project files are organized according to the assignment requirements. All components are located inside the `src/components` directory.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```text
+/ weblab5
+├── src/
+│   ├── components/
+│   │   ├── Card.jsx        // A layout component that uses the 'children' prop for composition.
+│   │   ├── Product.jsx     // A reusable component that displays a single product (title and price).
+│   │   └── ProductList.jsx // Contains static product data and renders the list of Product components.
+│   ├── App.jsx             // The root component that manages 'showProducts' and 'name' states.
+│   └── main.jsx            // The main entry point of the React application.
+├── index.html
+└── package.json
+```
 
-## Expanding the ESLint configuration
+## Challenges Faced
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# Web-Lab_5
+During the development of this project, I faced a few challenges as a beginner in React:
+
+    Using the children prop: Understanding how component composition works and passing elements inside Card.jsx using the children prop was initially confusing. I had to review the lecture notes to implement it correctly.
+
+    List Rendering and Keys: While mapping the static data array in ProductList.jsx, I received console warnings about unique keys. I learned that using array indexes as keys is a bad practice, so I used the unique id values of the products instead.
+
+    Controlled Inputs: Binding the input field to the React state (name variable in App.jsx) required some practice. I had to make sure the input's value was strictly controlled by the state using the onChange event.
